@@ -2,7 +2,7 @@
 
 to run this project
 ```bash
-node src/main
+node main
 ```
 
 to run tests

@@ -1,7 +1,7 @@
 const createServer = require('http').createServer;
-const views = require('./views');
-const helpers = require('./helpers');
-const env = require('../env.json');
+const views = require('./src/views');
+const helpers = require('./src/helpers');
+const env = require('./env.json');
 
 const requestListener = async function (req, res) {
     res.writeHead(200, helpers.headers);

@@ -47,7 +47,13 @@ function onData(req, res, sendBody) {
         sendBody(JSON.parse(body))
     });
 }
-
+function saveJson(json, filename) {
+    fs.writeFile(filename, JSON.stringify(json), function (err) {
+        if (err) { return false }
+        printInfo(`Data saved to the file ${filename}.`);
+    })
+    return true
+}
 const headers = {
     'Access-Control-Allow-Origin': '*', /* @dev First, read about security */
     'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
@@ -59,5 +65,6 @@ module.exports = {
     getQueryData,
     getPath,
     headers,
+    saveJson,
     onData
 }
